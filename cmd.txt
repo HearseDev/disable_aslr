@@ -1,0 +1,5 @@
+sep auto
+/send disable_aslr.bin
+modload
+disable_aslr
+bootx

@@ -1,0 +1,5 @@
+*.bin
+compile_flags.txt
+tools
+scripts
+compile_commands.json
