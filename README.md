@@ -4,9 +4,7 @@
 
 
 ## IMPORTANT
-
-- **The current offset is only for iOS 14.8 iPhone X, you must adjust to use.**
-- This can and should be improved using kpf, but i do not have the time to invest into it.
+- **The current kpf matches/masks are only tested on iOS 14.8 iPhone X, if it does not work for your device/iOS please feel free to contribute to this project.**
 
 ## Explanation
 
