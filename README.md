@@ -1,6 +1,6 @@
 # disable_aslr
 
-## _Disable ASLR for iOS with PongoOS_
+## _Disable Userspace ASLR for iOS via PongoOS_
 
 
 ## IMPORTANT
