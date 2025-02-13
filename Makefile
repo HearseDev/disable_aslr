@@ -1,7 +1,7 @@
 INCLUDE_DIR = include
 
-PONGOTERM = ./pongoterm/pongoterm
-BOOT_HELPER = ./scripts/boot
+PONGOTERM = ./pongoterm/pongoterm # FIXME: Change this to the path of your pongoterm binary
+BOOT_HELPER = ./scripts/boot # FIXME: Change script to fit your needs
 
 MODULE = disable_aslr.bin
 $(MODULE): main.c
@@ -10,7 +10,7 @@ $(MODULE): main.c
 clean:
 	rm -f $(MODULE)
 
-# Spawn pongoterm (you need to have a pongoterm binary)
+# Spawn pongoterm
 term:
 	$(PONGOTERM)
 

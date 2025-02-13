@@ -42,5 +42,8 @@ else
     sleep 1
 fi
 
-# Boot checkra1n pongoOS
+# Boot checkra1n pongoOS 
 CHECKRA1N_CLI=1 CHECKRA1N_EARLY_EXIT=1 $CHECKRAIN_BIN -p
+
+# If you are using palera1n, you can use this instead:
+# $PALERAIN_BIN -p
