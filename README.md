@@ -6,8 +6,7 @@
 ## IMPORTANT
 - **The current kpf matches/masks are only tested on iOS 14.8 iPhone X, if it does not work for your device/iOS please feel free to contribute to this project.**
 
-## Usage (See Makefile for test command)
-
+## Usage (See Makefile for commands)
 
 ## Credits
 

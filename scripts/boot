@@ -1,0 +1,46 @@
+#!/bin/bash
+set -e
+# Helper functions
+check_command(){
+    if ! command -v $1 2>&1 >/dev/null
+    then
+        echo "Command: $1 could not be found"
+        exit 1
+    fi
+}
+check_file(){
+    if [ ! -f $1 ]; then
+        echo "File: $1 could not be found"
+        exit 1
+    fi
+}
+
+PALERAIN_BIN=palera1n
+check_command $PALERAIN_BIN
+
+# Check if Linux or macOS
+if [ "$(uname)" == "Darwin" ]; then
+    echo "macOS detected"
+    CHECKRAIN_BIN=/Applications/checkra1n.app/Contents/MacOS/checkra1n
+    check_file $CHECKRAIN_BIN
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    echo "Linux detected"
+    CHECKRAIN_BIN=checkra1n
+    check_command $CHECKRAIN_BIN
+else
+    echo "Unsupported OS"
+    exit 1
+fi
+
+# Check if device is in DFU mode (TODO: Add support for linux)
+if system_profiler SPUSBDataType | grep -q "Apple Mobile Device (DFU Mode)"; then
+    echo "Device in DFU Mode detected!"
+else
+    echo "No device in DFU Mode found."
+    # Use palera1n to boot dfu (its easier than using checkra1n)
+    $PALERAIN_BIN --dfuhelper
+    sleep 1
+fi
+
+# Boot checkra1n pongoOS
+CHECKRA1N_CLI=1 CHECKRA1N_EARLY_EXIT=1 $CHECKRAIN_BIN -p

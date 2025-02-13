@@ -1,6 +1,4 @@
 *.bin
+pongoterm/
 compile_flags.txt
-tools
-scripts
-compile_commands.json
 .DS_Store
